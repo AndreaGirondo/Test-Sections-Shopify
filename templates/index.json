@@ -6,7 +6,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "Lets build",
             "heading_size": "h0"
           }
         },
@@ -45,6 +45,23 @@
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
+      
+    },
+    "main-product": {
+      "type": "main-product",
+      "settings": {},
+      "blocks": {
+        "custom_block": {
+          "type": "custom_block",
+          "settings": {
+            "image": "",
+            "description": "Entrer votre description ici"
+          }
+        }
+      },
+      "block_order": [
+        "custom_block"
+      ]
     },
     "rich_text": {
       "type": "rich-text",
@@ -205,6 +222,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "main-product"
   ]
 }
