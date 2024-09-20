@@ -47,13 +47,15 @@
       }
       
     },
+
+    // Ajout de la section main-product
     "main-product": {
       "type": "main-product",
       "settings": {},
       "blocks": {
         "custom_block": {
           "type": "custom_block",
-          "settings": {
+          "settings": { // Ajout de l'image et de la description
             "image": "",
             "description": "Entrer votre description ici"
           }
@@ -63,13 +65,15 @@
         "custom_block"
       ]
     },
+
+    // Ajout de la section custom-image-text
     "custom-image-text": {
       "type": "custom-image-text",
       "settings": {},
       "blocks": {
         "custom_block": {
           "type": "custom_block",
-          "settings": {
+          "settings": { // Ajout de l'image et de la description
             "image": "",
             "description": "Entrer votre description ici"
           }

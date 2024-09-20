@@ -1477,12 +1477,16 @@ a.product__text {
   }
 }
 
+
+/* Custom block */
 .image-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+
+/* responsive pour les differentes colonnes */
 .image-grid.column-1 .custom-block {
   flex: 0 0 calc(100% - var(--gap));
 }
@@ -1514,7 +1518,7 @@ a.product__text {
   height: auto;
 }
 
-/* Responsive adjustments */
+/* responsive pour les differentes dimentions d'images */
 @media (max-width: 1200px) {
   .size-small .custom-block img {
     width: 150px;
@@ -1543,6 +1547,7 @@ a.product__text {
   }
 }
 
+/* responsive pour les differentes colonnes */
 .custom-block {
   display: flex;
   flex-direction: column;
