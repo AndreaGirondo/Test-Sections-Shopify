@@ -1,0 +1,147 @@
+{% comment %}
+  Section: Custom Image Text
+{% endcomment %}
+
+<product-info
+    id="CustomImageText-{{ section.id }}"
+    class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+    data-section="{{ section.id }}"
+    data-product-id="{{ product.id }}"
+    data-update-url="true"
+    data-url="{{ product.url }}"
+    {% if section.settings.image_zoom == 'hover' %}
+      data-zoom-on-hover
+    {% endif %}
+  >
+    {{ 'section-custom-image-text.css' | asset_url | stylesheet_tag }}
+  
+    {% assign columns = section.settings.image_columns | default: 2 %}
+    {% assign column_class = 'column-' | append: columns %}
+    {% assign size_class = 'size-' | append: section.settings.block_size %}
+  
+    <div class="image-grid {{ column_class }} {{ size_class }}" style="margin-top: {{ section.settings.margin_top }}px; margin-bottom: {{ section.settings.margin_bottom }}px; gap: {{ section.settings.gap }}px;">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'custom_block' %}
+            <div class="custom-block">
+              {% if block.settings.image %}
+                <div class="icon-text-align">
+                  <span class="icon">
+                    <img src="{{ block.settings.image | img_url: '1024x1024' }}" alt="Custom Image" width="1024" height="1024">
+                  </span>
+                  <span class="text">
+                    <p>{{ block.settings.description }}</p>
+                  </span>
+                </div>
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </product-info>
+  
+  {% schema %}
+  {
+    "name": "Custom Image Text",
+    "settings": [
+      {
+        "type": "select",
+        "id": "image_columns",
+        "label": "Nombre d'images par ligne",
+        "default": "2",
+        "options": [
+          {
+            "value": "1",
+            "label": "1 Image"
+          },
+          {
+            "value": "2",
+            "label": "2 Images"
+          },
+          {
+            "value": "3",
+            "label": "3 Images"
+          },
+          {
+            "value": "4",
+            "label": "4 Images"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "block_size",
+        "label": "Taille du bloc",
+        "default": "medium",
+        "options": [
+          {
+            "value": "small",
+            "label": "Petit"
+          },
+          {
+            "value": "medium",
+            "label": "Moyen"
+          },
+          {
+            "value": "large",
+            "label": "Grand"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "margin_top",
+        "label": "Marge supérieure",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "margin_bottom",
+        "label": "Marge inférieure",
+        "default": 10,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "gap",
+        "label": "Espace entre les images",
+        "default": 50,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "custom_block",
+        "name": "Images et description",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Default",
+        "category": "Custom"
+      }
+    ]
+  }
+  {% endschema %}

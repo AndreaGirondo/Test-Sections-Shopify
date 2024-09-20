@@ -63,6 +63,22 @@
         "custom_block"
       ]
     },
+    "custom-image-text": {
+      "type": "custom-image-text",
+      "settings": {},
+      "blocks": {
+        "custom_block": {
+          "type": "custom_block",
+          "settings": {
+            "image": "",
+            "description": "Entrer votre description ici"
+          }
+        }
+      },
+      "block_order": [
+        "custom_block"
+      ]
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -218,11 +234,12 @@
   },
   "order": [
     "image_banner",
+    "main-product",
+    "custom-image-text",
     "rich_text",
     "featured_collection",
     "collage",
     "video",
-    "multicolumn",
-    "main-product"
+    "multicolumn"
   ]
 }

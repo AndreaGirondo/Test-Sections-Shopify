@@ -1549,18 +1549,3 @@ a.product__text {
   align-items: center;
   text-align: center;
 }
-
-
-.icon-text-align {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem; 
-}
-
-.icon-text-align .icon {
-  display: inline-block;
-}
-
-.icon-text-align .text {
-  display: inline-block;
-}

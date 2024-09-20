@@ -86,15 +86,9 @@
       {% when 'custom_block' %}
         <div class="custom-block">
           {% if block.settings.image %}
-            <div class="icon-text-align">
-              <span class="icon">
-                <img src="{{ block.settings.image | img_url: '1024x1024' }}" alt="Custom Image" width="1024" height="1024">
-              </span>
-              <span class="text">
-                <p>{{ block.settings.description }}</p>
-              </span>
-            </div>
+            <img src="{{ block.settings.image | img_url: '1024x1024' }}" alt="Custom Image" width="1024" height="1024">
           {% endif %}
+          <p>{{ block.settings.description }}</p>
         </div>
     {% endcase %}
   {% endfor %}
